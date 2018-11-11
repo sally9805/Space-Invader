@@ -56,8 +56,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BaseHealth.cs" />
+    <Compile Include="Assets\Scripts\BaseManager.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\EnemyBullet.cs" />
+    <Compile Include="Assets\Scripts\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Restart.cs" />
+    <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/haishan_gao/Documents/GitHub/Space-Invader/Space Invader/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
