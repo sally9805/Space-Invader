@@ -25,7 +25,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public static void AddToScore(float points)
 	{
 		score += points;
-		boolScore = true;
+		if (points > 0) boolScore = true;
 		UpdateText();
 	}
 	

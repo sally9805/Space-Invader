@@ -26,7 +26,11 @@ public class BaseManager : MonoBehaviour
 			ScoreKeeper.AddToScore(-20.0f);
 		}
 		_childNum = currentNum;
-		if (_childNum == 0) GameOver.isGameOver = true;
+		if (_childNum == 0)
+		{
+			GameOver.isGameOver = true;
+			Destroy(gameObject);
+		}
 		
 	}
 }

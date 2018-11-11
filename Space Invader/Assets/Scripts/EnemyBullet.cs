@@ -11,7 +11,6 @@ public class EnemyBullet : MonoBehaviour
 	void Start ()
 	{
 		enemyBulletTrans = GetComponent<Transform>();
-		
 	}
 	
 	// Update is called once per frame

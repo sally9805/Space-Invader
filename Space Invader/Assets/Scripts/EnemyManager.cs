@@ -19,7 +19,7 @@ public class EnemyManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("MoveEnemy", 0.1f, 0.3f);
+		InvokeRepeating ("EnemyApproach", 0.1f, 0.45f);
 		enemyHolder = GetComponent<Transform> ();
 	}
 
@@ -35,7 +35,7 @@ public class EnemyManager : MonoBehaviour {
 		}
 	}
 
-	void MoveEnemy()
+	void EnemyApproach()
 	{
 		enemyHolder.position += Vector3.right * speed;
 		foreach (Transform enemy in enemyHolder) {
@@ -53,15 +53,19 @@ public class EnemyManager : MonoBehaviour {
 				Time.timeScale = 0;
 			}
 		}
-		if (enemyHolder.childCount == 1) {
-			CancelInvoke ();
-			InvokeRepeating ("MoveEnemy", 0.1f, 0.25f);
-		}
 		if (enemyHolder.childCount == 0) {
 			Time.timeScale = 0;
 			winText.enabled = true;
 			restartText.enabled = true;
 			GetComponent<AudioSource>().PlayOneShot(winSound);
+		}
+		else if (enemyHolder.childCount == 1) {
+			CancelInvoke ();
+			InvokeRepeating ("EnemyApproach", 0.1f, 0.2f);
+		}
+		else if (enemyHolder.childCount <= 16) {
+			CancelInvoke ();
+			InvokeRepeating ("EnemyApproach", 0.1f, 0.3f);
 		}
 	}
 }
